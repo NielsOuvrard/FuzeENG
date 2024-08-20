@@ -27,11 +27,12 @@ And the goal will be to kill the other player.
 
 ## Time
 
+- A game lasts 60 seconds.
+- The player with the most kills wins.
+
 ## Screenshots
 
 ![Screenshot](screenshot/version_1.png)
-
-## Installation
 
 ## Usage
 
