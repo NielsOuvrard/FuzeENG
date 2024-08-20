@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://by127lk2whq6t"]
+
+[ext_resource type="PackedScene" uid="uid://cc3mjrgpkxhv5" path="res://scenes/player.tscn" id="1_xbpyy"]
+[ext_resource type="PackedScene" uid="uid://m8c7hdgi7jlf" path="res://scenes/enemy.tscn" id="2_1bjsr"]
+[ext_resource type="PackedScene" uid="uid://b4thnnurvfd48" path="res://scenes/item.tscn" id="3_n7120"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_xbpyy")]
+position = Vector2(-130, -24)
+
+[node name="enemy" parent="." instance=ExtResource("2_1bjsr")]
+position = Vector2(70, -82)
+
+[node name="enemy2" parent="." instance=ExtResource("2_1bjsr")]
+position = Vector2(124, -15)
+
+[node name="enemy3" parent="." instance=ExtResource("2_1bjsr")]
+position = Vector2(66, 67)
+
+[node name="Item2" parent="." instance=ExtResource("3_n7120")]
+position = Vector2(-38, -72)
+
+[node name="Item" parent="." instance=ExtResource("3_n7120")]
+position = Vector2(-70, 72)
+
+[node name="Item3" parent="." instance=ExtResource("3_n7120")]
+position = Vector2(58, -18)
