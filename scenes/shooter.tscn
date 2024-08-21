@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://seg7j5mvdbxo"]
+
+[ext_resource type="Script" path="res://scripts/shooter.gd" id="1_m7jtn"]
+[ext_resource type="Texture2D" uid="uid://d27qp4amobtql" path="res://sprites/pixelart/purple.png" id="2_8dyhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1e1m"]
+atlas = ExtResource("2_8dyhx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbr64"]
+atlas = ExtResource("2_8dyhx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve6i1"]
+atlas = ExtResource("2_8dyhx")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m820"]
+atlas = ExtResource("2_8dyhx")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4h1lu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1e1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbr64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve6i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m820")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_m7jtn")
+
+[node name="Grip" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_4h1lu")
+autoplay = "default"
+frame_progress = 0.472642
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

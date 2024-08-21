@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-@export var SPEED = 100
+@export var SPEED = 200
 @onready var cool_down = $CoolDown
 
 var dir : float
 var spawnPos : Vector2
 var spawnRot : float
+var sender : int
 
 func _ready():
 	global_position = spawnPos
@@ -23,5 +24,6 @@ func _on_timer_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	body.queue_free()
-	queue_free()
+	if body.id != sender:
+		body.queue_free()
+		queue_free()
