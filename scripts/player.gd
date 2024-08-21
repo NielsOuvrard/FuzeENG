@@ -10,7 +10,8 @@ extends CharacterBody2D
 # ? onreeady necessary
 @onready var shooter_scene = load("res://scenes/shooter.tscn")
 @onready var laser_scene = load("res://scenes/laser.tscn")
-@onready var weapons_scenes = [shooter_scene, laser_scene]
+@onready var ball_scene = load("res://scenes/ball.tscn")
+@onready var weapons_scenes = [shooter_scene, laser_scene, ball_scene]
 # TODO here the others weapons
 
 @onready var fire = $BackFire

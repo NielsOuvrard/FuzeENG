@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7xo8c4pisqi5"
-path="res://.godot/imported/Coin.png-6741a13821052cf31c16581e07fcbaec.ctex"
+uid="uid://xfhxfa44p6nq"
+path="res://.godot/imported/grip_ball_void.png-d996f938333caac13ce47b75a1439131.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Coin.png"
-dest_files=["res://.godot/imported/Coin.png-6741a13821052cf31c16581e07fcbaec.ctex"]
+source_file="res://sprites/pixelart/grip_ball_void.png"
+dest_files=["res://.godot/imported/grip_ball_void.png-d996f938333caac13ce47b75a1439131.ctex"]
 
 [params]
 

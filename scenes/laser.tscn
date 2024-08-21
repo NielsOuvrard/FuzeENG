@@ -100,14 +100,14 @@ script = ExtResource("1_x4c08")
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_i4pv6")
 autoplay = "default"
-frame_progress = 0.704276
+frame_progress = 0.254516
 
 [node name="LaserSprite" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(0, -22)
 sprite_frames = SubResource("SpriteFrames_brf7u")
 autoplay = "default"
-frame_progress = 0.755366
+frame_progress = 0.305605
 
 [node name="CoolDown" type="Timer" parent="."]
 wait_time = 3.0

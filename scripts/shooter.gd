@@ -7,10 +7,6 @@ extends Node2D
 
 var is_able_to_shot := true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
 const size_grip = Vector2(10, 30) # value approximated
 
 func shot():
@@ -28,11 +24,6 @@ func shot():
 		instance.sender = rocket.id
 
 		main.add_child.call_deferred(instance)
-		
-		# reset animation
-		#current_weapon.attack()
-
-
 
 
 func _on_timer_timeout():

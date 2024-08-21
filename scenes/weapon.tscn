@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://deroug1rh7d8g"]
-
-[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_345o7"]
-
-[node name="Weapon" type="Node"]
-script = ExtResource("1_345o7")
-
-[node name="Timer" type="Timer" parent="."]
