@@ -3,20 +3,21 @@ extends CharacterBody2D
 const Globals = preload("res://scripts/globals.gd")
 
 #@onready var cool_down = $CoolDown
+@onready var laser_sprite = $LaserSprite
+@onready var cool_down = $CoolDown
+@onready var rocket = $".."
+@onready var collision_shape_2d = $Area2D/CollisionShape2D
 
-var dir : float
-var spawnPos : Vector2
-var spawnRot : float
-
-func _ready():
-	global_position = spawnPos
-	global_rotation = spawnRot
-	#cool_down.start()
-	
-	var obj = Weapon.new(Globals.KindWeapon.LASER)
-	obj.display_info()
-	
+func shot():
+	laser_sprite.visible = true
+	cool_down.start()
+	collision_shape_2d.disabled = false
 
 
-#func _on_timer_timeout():
-	#queue_free()
+func _on_cool_down_timeout():
+	queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	if body.id != rocket.id:
+		body.queue_free()

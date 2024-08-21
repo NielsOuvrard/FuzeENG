@@ -1,7 +1,58 @@
-[gd_scene load_steps=9 format=3 uid="uid://4a2av0aagpr8"]
+[gd_scene load_steps=17 format=3 uid="uid://4a2av0aagpr8"]
 
 [ext_resource type="Script" path="res://scripts/laser.gd" id="1_x4c08"]
+[ext_resource type="Texture2D" uid="uid://o10crkxx1pbk" path="res://sprites/pixelart/laser.png" id="2_rtno7"]
 [ext_resource type="Texture2D" uid="uid://bjljjkcjcmoie" path="res://sprites/pixelart/laser_action.png" id="2_vflrj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuaox"]
+atlas = ExtResource("2_rtno7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbyqd"]
+atlas = ExtResource("2_rtno7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf2ge"]
+atlas = ExtResource("2_rtno7")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvnoy"]
+atlas = ExtResource("2_rtno7")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exglm"]
+atlas = ExtResource("2_rtno7")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bia4o"]
+atlas = ExtResource("2_rtno7")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4pv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuaox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbyqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf2ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvnoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exglm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bia4o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lwam3"]
 atlas = ExtResource("2_vflrj")
@@ -40,19 +91,26 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73w0e"]
-size = Vector2(4, 32)
+size = Vector2(4, 38)
 
 [node name="Laser" type="CharacterBody2D"]
 script = ExtResource("1_x4c08")
 
-[node name="CoolDown" type="Timer" parent="."]
-wait_time = 3.0
+[node name="Grip" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_i4pv6")
+autoplay = "default"
+frame_progress = 0.704276
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+[node name="LaserSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -22)
 sprite_frames = SubResource("SpriteFrames_brf7u")
 autoplay = "default"
-frame_progress = 0.000983361
+frame_progress = 0.755366
+
+[node name="CoolDown" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
@@ -62,7 +120,9 @@ disabled = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -16)
+position = Vector2(0, -19)
 shape = SubResource("RectangleShape2D_73w0e")
+disabled = true
 
-[connection signal="timeout" from="CoolDown" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
