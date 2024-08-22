@@ -3,9 +3,10 @@ extends CharacterBody2D
 #@onready var cool_down = $CoolDown
 @onready var flame = $Flame
 @onready var cool_down = $CoolDown
-@onready var rocket = $".."
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
 @onready var flam_sound = $FlamSound
+
+var player
 
 func shot():
 	flame.visible = true
@@ -19,5 +20,7 @@ func _on_cool_down_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	if body.id != rocket.id:
+	if body.id != player.id:
 		body.destroy()
+		player.points += 1
+		player.camera_2d.apply_shake()

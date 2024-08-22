@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var ball_scene = load("res://scenes/ball.tscn")
 @onready var flame_thrower_scene = load("res://scenes/flame_thrower.tscn")
 @onready var weapons_scenes = [shooter_scene, laser_scene, ball_scene, flame_thrower_scene]
+@onready var camera_2d = $"../Camera2D"
 
 @onready var rocket = $Rocket
 @onready var fire = $BackFire
@@ -33,6 +34,7 @@ func equip_item(local_item): # local_item use later
 	var new_weapon_scene = weapons_scenes[local_item % len(weapons_scenes)]
 	current_weapon_instance = new_weapon_scene.instantiate()
 	current_weapon_instance.position.y -= 14
+	current_weapon_instance.player = self
 	add_child(current_weapon_instance)
 
 

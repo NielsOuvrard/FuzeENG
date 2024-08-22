@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
 @onready var laser_sound = $LaserSound
 
+var player
+
 func shot():
 	laser_sprite.visible = true
 	cool_down.start()
@@ -21,3 +23,5 @@ func _on_cool_down_timeout():
 func _on_area_2d_body_entered(body):
 	if body.id != rocket.id:
 		body.destroy()
+		player.points += 1
+		player.camera_2d.apply_shake()

@@ -6,7 +6,7 @@ extends CharacterBody2D
 var dir : float
 var spawnPos : Vector2
 var spawnRot : float
-var sender : int
+var sender
 
 func _ready():
 	global_position = spawnPos
@@ -24,6 +24,8 @@ func _on_timer_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	if body.id != sender:
+	if body.id != sender.id:
 		body.destroy()
+		sender.points += 1
+		sender.camera_2d.apply_shake()
 		queue_free()

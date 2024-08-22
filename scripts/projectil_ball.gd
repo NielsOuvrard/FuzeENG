@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var dir : float
 var spawnPos : Vector2
 var spawnRot : float
-var sender : int
+var sender
 
 var speed = 1
 var pure_velocity = 0
@@ -34,5 +34,7 @@ func _on_timer_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	if body.id != sender:
+	if body.id != sender.id:
+		sender.camera_2d.apply_shake()
 		body.destroy()
+		sender.points += 1

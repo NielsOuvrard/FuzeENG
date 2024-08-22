@@ -8,6 +8,7 @@ extends Node2D
 @onready var progress_bar = $ProgressBar
 @onready var player = $Player
 @onready var time_label = $TimeLabel
+@onready var points_label = $PointsLabel
 
 @export var INIT_NBR_ITEMS := 3
 @export var INIT_NBR_ENEMIES := 3
@@ -105,5 +106,9 @@ func _process(delta):
 		time_elapsed += delta
 		progress_bar.value = 60 - time_elapsed  # Update the progress bar value
 		time_label.text = str(int(progress_bar.value))
+		
+		points_label.text = "Points: " + str(player.points)
 	else:
 		print("Time's up!") 
+
+
