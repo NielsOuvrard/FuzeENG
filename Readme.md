@@ -37,3 +37,17 @@ And the goal will be to kill the other player.
 ## Usage
 
 You can play the game by opening the project in Godot Engine.
+
+<!--
+idea:
+
+- shield: protect the player and reflect the projectiles, for 5 seconds.
+- backfire: reverse the movement of the player, for 2 seconds.
+- backflash: teleport the player to his position 2 seconds ago.
+- mine: can be placed by the player
+- freeze: freeze the player, for 0.5 seconds.
+- speed: increase the speed of the player, for 2 seconds.
+- slow: decrease the speed of the player, for 1.5 seconds.
+-
+
+-->

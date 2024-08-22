@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 #@onready var cool_down = $CoolDown
-@onready var laser_sprite = $LaserSprite
+@onready var flame = $Flame
 @onready var cool_down = $CoolDown
 @onready var rocket = $".."
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
 
 func shot():
-	laser_sprite.visible = true
+	flame.visible = true
 	cool_down.start()
 	collision_shape_2d.disabled = false
 

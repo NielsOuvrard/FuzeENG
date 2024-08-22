@@ -4,15 +4,13 @@ extends CharacterBody2D
 @export var ROTATE_SPEED = 3.0
 @export var ACCEL = 1.5
 
-# maybe use later
-# const Globals = preload("res://scripts/globals.gd")
 
 # ? onreeady necessary
 @onready var shooter_scene = load("res://scenes/shooter.tscn")
 @onready var laser_scene = load("res://scenes/laser.tscn")
 @onready var ball_scene = load("res://scenes/ball.tscn")
-@onready var weapons_scenes = [shooter_scene, laser_scene, ball_scene]
-# TODO here the others weapons
+@onready var flame_thrower_scene = load("res://scenes/flame_thrower.tscn")
+@onready var weapons_scenes = [shooter_scene, laser_scene, ball_scene, flame_thrower_scene]
 
 @onready var fire = $BackFire
 
@@ -22,8 +20,8 @@ var id = 0
 var current_weapon_instance = null
 
 func _ready():
-	pass
-	#equip_item(null)
+	equip_item(0)
+	#pass
 
 func equip_item(local_item): # local_item use later
 	# TODO remove the modulo when all weapons add
@@ -40,7 +38,7 @@ func reset_weapon():
 
 func _process(_delta):
 	var is_shooting = Input.get_action_strength("shot")
-	if is_shooting and current_weapon_instance:
+	if is_shooting and is_instance_valid(current_weapon_instance):
 		current_weapon_instance.shot()
 
 

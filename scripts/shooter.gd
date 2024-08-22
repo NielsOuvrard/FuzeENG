@@ -8,12 +8,13 @@ extends Node2D
 var is_able_to_shot := true
 
 const size_grip = Vector2(10, 30) # value approximated
+var shooted = 0
 
 func shot():
 	if is_able_to_shot:
-		print("shot")
 		timer.start()
 		is_able_to_shot = false
+		shooted += 1
 		
 		## instance stuff
 		var instance = projectile.instantiate()
@@ -24,7 +25,9 @@ func shot():
 		instance.sender = rocket.id
 
 		main.add_child.call_deferred(instance)
-
+		
 
 func _on_timer_timeout():
 	is_able_to_shot = true
+	if shooted >= 5:
+		queue_free()

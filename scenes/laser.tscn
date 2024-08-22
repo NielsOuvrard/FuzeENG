@@ -100,17 +100,17 @@ script = ExtResource("1_x4c08")
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_i4pv6")
 autoplay = "default"
-frame_progress = 0.254516
+frame_progress = 0.806051
 
 [node name="LaserSprite" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(0, -22)
 sprite_frames = SubResource("SpriteFrames_brf7u")
 autoplay = "default"
-frame_progress = 0.305605
+frame_progress = 0.85714
 
 [node name="CoolDown" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)

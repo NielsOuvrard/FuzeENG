@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://swy3aobcge07"]
+
+[ext_resource type="Script" path="res://scripts/flame_thrower.gd" id="1_cjyo1"]
+[ext_resource type="Texture2D" uid="uid://bct1ywfmoygk3" path="res://sprites/pixelart/torch.png" id="2_h4b2a"]
+[ext_resource type="Texture2D" uid="uid://dbo2a1mhg8n07" path="res://sprites/pixelart/flame_thrower_on.png" id="3_lf83e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2n2i"]
+atlas = ExtResource("2_h4b2a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leuse"]
+atlas = ExtResource("2_h4b2a")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hxgx"]
+atlas = ExtResource("2_h4b2a")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yag71"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2n2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leuse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hxgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7ktq"]
+atlas = ExtResource("3_lf83e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcrbl"]
+atlas = ExtResource("3_lf83e")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3eiqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7ktq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcrbl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hig8s"]
+radius = 7.0
+height = 28.0
+
+[node name="FlameThrower" type="CharacterBody2D"]
+script = ExtResource("1_cjyo1")
+
+[node name="Grip" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_yag71")
+autoplay = "default"
+frame = 1
+frame_progress = 0.266713
+
+[node name="Flame" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-2, -16)
+sprite_frames = SubResource("SpriteFrames_3eiqn")
+autoplay = "default"
+frame = 1
+frame_progress = 0.885633
+
+[node name="CoolDown" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_hig8s")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_hig8s")
+
+[connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
