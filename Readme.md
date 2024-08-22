@@ -32,7 +32,11 @@ And the goal will be to kill the other player.
 
 ## Screenshots
 
+20 august 2024
 ![Screenshot](screenshot/version_1.png)
+
+22 august 2024
+![Screenshot](screenshot/version_2.png)
 
 ## Usage
 

@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var ROTATE_SPEED = 3.0
 @export var ACCEL = 1.5
 
-
 # ? onreeady necessary
 @onready var shooter_scene = load("res://scenes/shooter.tscn")
 @onready var laser_scene = load("res://scenes/laser.tscn")
@@ -15,14 +14,21 @@ extends CharacterBody2D
 
 @onready var rocket = $Rocket
 @onready var fire = $BackFire
+@onready var main = $".."
+
+var id : int
+var input_move_up = "move_up"
+var input_move_down = "move_down"
+var input_move_right = "move_right"
+var input_move_left = "move_left"
+var input_shot = "shot"
 
 var is_moving := false
-var id := 0
 var points := 0
-
 var current_weapon_instance = null
 
 func _ready():
+	id = main.id_next_player
 	rocket.frame = id
 	#equip_item(0)
 	pass
@@ -40,7 +46,7 @@ func equip_item(local_item): # local_item use later
 
 
 func _process(_delta):
-	var is_shooting = Input.get_action_strength("shot")
+	var is_shooting = Input.get_action_strength(input_shot)
 	if is_shooting and is_instance_valid(current_weapon_instance):
 		current_weapon_instance.shot()
 
@@ -48,12 +54,12 @@ func _process(_delta):
 
 func _physics_process(delta):
 	var distance_move = (
-		Input.get_action_strength("move_up") -
-		Input.get_action_strength("move_down")
+		Input.get_action_strength(input_move_up) -
+		Input.get_action_strength(input_move_down)
 	)
 	var rot = (
-		Input.get_action_strength("move_right") -
-		Input.get_action_strength("move_left")
+		Input.get_action_strength(input_move_right) -
+		Input.get_action_strength(input_move_left)
 	)
 	if distance_move != 0 and not is_moving:
 		fire.play("big_fire")

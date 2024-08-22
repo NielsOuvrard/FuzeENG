@@ -82,6 +82,7 @@ animations = [{
 script = ExtResource("1_tiqkw")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+light_mask = 2
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_j04s5")
 

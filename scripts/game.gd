@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var item = load("res://scenes/item.tscn")
 @onready var enemy = load("res://scenes/enemy.tscn")
+@onready var player_scene = load("res://scenes/player.tscn")
 
 @onready var items_cooldown = $ItemsCooldown
 @onready var enemies_cooldown = $EnemiesCooldown
@@ -22,6 +23,12 @@ const SPAWN_ZONE = SIZE_WINDOW * 0.8
 var time_elapsed := 0.0
 var items_at_screen := []
 var enemies_at_screen := []
+var id_next_player := 0:
+	get:
+		id_next_player += 1
+		return id_next_player - 1
+
+var nmb_players := 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -109,6 +116,16 @@ func _process(delta):
 		
 		points_label.text = "Points: " + str(player.points)
 	else:
-		print("Time's up!") 
+		print("Time's up!")
+		
+	if nmb_players == 1:
+		if Input.get_action_strength("up_2") or Input.get_action_strength("down_2") or Input.get_action_strength("right_2") or Input.get_action_strength("left_2"):
+			var instance = player_scene.instantiate()
+			instance.input_move_up = "up_2"
+			instance.input_move_down = "down_2"
+			instance.input_move_right = "right_2"
+			instance.input_move_left = "left_2"
+			instance.input_shot = "shot_2"
 
-
+			add_child(instance)
+			nmb_players += 1
