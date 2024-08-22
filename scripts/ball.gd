@@ -5,6 +5,7 @@ extends Node2D
 @onready var rocket = $".."
 @onready var projectile = load("res://scenes/projectil_ball.tscn")
 @onready var grip = $Grip
+@onready var shot_sound = $ShotSound
 
 const size_grip = Vector2(10, 30) # value approximated
 var shot_done := false
@@ -13,6 +14,7 @@ var shot_done := false
 func shot():
 	if not shot_done:
 		shot_done = true
+		shot_sound.play()
 		## instance stuff
 		var instance = projectile.instantiate()
 		instance.dir = rocket.global_rotation

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://swy3aobcge07"]
+[gd_scene load_steps=13 format=3 uid="uid://swy3aobcge07"]
 
 [ext_resource type="Script" path="res://scripts/flame_thrower.gd" id="1_cjyo1"]
 [ext_resource type="Texture2D" uid="uid://bct1ywfmoygk3" path="res://assets/sprites/torch.png" id="2_h4b2a"]
 [ext_resource type="Texture2D" uid="uid://dbo2a1mhg8n07" path="res://assets/sprites/flame_thrower_on.png" id="3_lf83e"]
+[ext_resource type="AudioStream" uid="uid://ljk2xmj5syrh" path="res://assets/sounds/firethrower.mp3" id="4_g848f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2n2i"]
 atlas = ExtResource("2_h4b2a")
@@ -91,6 +92,9 @@ disabled = true
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_hig8s")
 disabled = true
+
+[node name="FlamSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_g848f")
 
 [connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

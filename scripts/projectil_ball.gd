@@ -35,5 +35,5 @@ func _on_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	if body.id != sender:
-		body.queue_free()
+		body.destroy()
 		queue_free()

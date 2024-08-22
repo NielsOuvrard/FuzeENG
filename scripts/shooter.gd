@@ -5,6 +5,9 @@ extends Node2D
 @onready var rocket = $".."
 @onready var projectile = load("res://scenes/projectil.tscn")
 
+@onready var shot_sound = $ShotSound
+
+
 var is_able_to_shot := true
 
 const size_grip = Vector2(10, 30) # value approximated
@@ -15,6 +18,7 @@ func shot():
 		timer.start()
 		is_able_to_shot = false
 		shooted += 1
+		shot_sound.play()
 		
 		## instance stuff
 		var instance = projectile.instantiate()

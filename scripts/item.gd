@@ -9,6 +9,8 @@ extends Node2D
 @onready var item_ball = $ItemBall
 @onready var weapons = [item_purple, item_laser, item_ball, item_torch]
 
+@onready var animation_player = $AnimationPlayer
+
 
 var random_number = 0 
 
@@ -24,4 +26,4 @@ func _on_area_2d_body_entered(body):
 	print("your weapon is now" + str(weapon))
 	# body.change_weapon_to(random_number)
 	body.equip_item(weapon)
-	queue_free()
+	animation_player.play("take_item")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://by127lk2whq6t"]
+[gd_scene load_steps=8 format=3 uid="uid://by127lk2whq6t"]
 
 [ext_resource type="Texture2D" uid="uid://rmunk87jv2v8" path="res://assets/sprites/background.png" id="1_tm8o3"]
 [ext_resource type="PackedScene" uid="uid://cc3mjrgpkxhv5" path="res://scenes/player.tscn" id="1_xbpyy"]
 [ext_resource type="PackedScene" uid="uid://m8c7hdgi7jlf" path="res://scenes/enemy.tscn" id="2_1bjsr"]
 [ext_resource type="PackedScene" uid="uid://b4thnnurvfd48" path="res://scenes/item.tscn" id="3_n7120"]
+[ext_resource type="AudioStream" uid="uid://cy2r06vh0w00a" path="res://assets/sounds/gamemusic.mp3" id="5_wj827"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwdox"]
 texture = ExtResource("1_tm8o3")
@@ -54,3 +55,8 @@ position = Vector2(-70, 72)
 
 [node name="Item3" parent="Items" instance=ExtResource("3_n7120")]
 position = Vector2(58, -18)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wj827")
+autoplay = true
+bus = &"Music"
