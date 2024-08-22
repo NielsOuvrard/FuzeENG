@@ -41,6 +41,8 @@ anti_aliasing = false
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kym8u")
+INIT_NBR_ITEMS = null
+INIT_NBR_ENEMIES = null
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gxjra")
@@ -74,6 +76,16 @@ offset_left = 80.0
 offset_top = 86.0
 offset_right = 190.0
 offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("5_qh4jr")
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsLabel2" type="Label" parent="."]
+offset_left = -192.0
+offset_top = 85.0
+offset_right = -82.0
+offset_bottom = 108.0
 theme_override_fonts/font = ExtResource("5_qh4jr")
 text = "Points: 0"
 horizontal_alignment = 1

@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmy7alag1g25y"]
+
+[ext_resource type="FontFile" uid="uid://dsvosxxjomnr5" path="res://assets/fonts/PixelOperator8.ttf" id="1_a66bi"]
+[ext_resource type="Texture2D" uid="uid://bk6vso4vsh481" path="res://assets/sprites/rockets.png" id="2_n2wld"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 4.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -2.0
+offset_right = 384.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("1_a66bi")
+text = "FuzeENG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(5, 5)
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 45.0
+offset_top = -25.0
+offset_right = 112.0
+offset_bottom = 35.0
+
+[node name="Green" type="Sprite2D" parent="Control"]
+position = Vector2(94, 125)
+texture = ExtResource("2_n2wld")
+vframes = 4
+
+[node name="White" type="Sprite2D" parent="Control"]
+position = Vector2(223, 182)
+texture = ExtResource("2_n2wld")
+vframes = 4
+frame = 3
+
+[node name="Yellow" type="Sprite2D" parent="Control"]
+position = Vector2(94, 181)
+texture = ExtResource("2_n2wld")
+vframes = 4
+frame = 2
+
+[node name="Red" type="Sprite2D" parent="Control"]
+position = Vector2(225, 127)
+texture = ExtResource("2_n2wld")
+vframes = 4
+frame = 1

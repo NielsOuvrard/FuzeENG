@@ -10,6 +10,7 @@ extends Node2D
 @onready var player = $Player
 @onready var time_label = $TimeLabel
 @onready var points_label = $PointsLabel
+@onready var points_label_2 = $PointsLabel2
 
 @export var INIT_NBR_ITEMS := 3
 @export var INIT_NBR_ENEMIES := 3
@@ -29,6 +30,7 @@ var id_next_player := 0:
 		return id_next_player - 1
 
 var nmb_players := 1
+var player_2 = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -115,17 +117,19 @@ func _process(delta):
 		time_label.text = str(int(progress_bar.value))
 		
 		points_label.text = "Points: " + str(player.points)
+		if is_instance_valid(player_2):
+			points_label_2.text = "Points: " + str(player_2.points)
 	else:
 		print("Time's up!")
 		
 	if nmb_players == 1:
 		if Input.get_action_strength("up_2") or Input.get_action_strength("down_2") or Input.get_action_strength("right_2") or Input.get_action_strength("left_2"):
-			var instance = player_scene.instantiate()
-			instance.input_move_up = "up_2"
-			instance.input_move_down = "down_2"
-			instance.input_move_right = "right_2"
-			instance.input_move_left = "left_2"
-			instance.input_shot = "shot_2"
-
-			add_child(instance)
+			player_2 = player_scene.instantiate()
+			player_2.input_move_up = "up_2"
+			player_2.input_move_down = "down_2"
+			player_2.input_move_right = "right_2"
+			player_2.input_move_left = "left_2"
+			player_2.input_shot = "shot_2"
+d
+			add_child(player_2)
 			nmb_players += 1
