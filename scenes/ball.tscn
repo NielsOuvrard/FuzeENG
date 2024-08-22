@@ -48,7 +48,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="Ball" type="Node2D"]
 script = ExtResource("1_pbjek")
 
 [node name="Grip" type="AnimatedSprite2D" parent="."]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://cc3mjrgpkxhv5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tiqkw"]
-[ext_resource type="Texture2D" uid="uid://joj54y6fgrr1" path="res://assets/sprites/rocket.png" id="2_lm8yh"]
 [ext_resource type="Texture2D" uid="uid://di0b22hrikw74" path="res://assets/sprites/fire.png" id="2_walaa"]
+[ext_resource type="Texture2D" uid="uid://bk6vso4vsh481" path="res://assets/sprites/rockets.png" id="3_n2jlk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j04s5"]
 size = Vector2(10, 26)
@@ -93,4 +93,6 @@ autoplay = "small_fire"
 frame_progress = 0.482674
 
 [node name="Rocket" type="Sprite2D" parent="."]
-texture = ExtResource("2_lm8yh")
+texture = ExtResource("3_n2jlk")
+offset = Vector2(2.08165e-12, 2.08165e-12)
+vframes = 4

@@ -12,9 +12,6 @@ extends Node2D
 @onready var animation_player = $AnimationPlayer
 
 
-var random_number = 0 
-
-
 func _ready():
 	if weapon < 0:
 		weapon = randi() % len(weapons)
@@ -23,7 +20,6 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body):
-	print("your weapon is now" + str(weapon))
-	# body.change_weapon_to(random_number)
-	body.equip_item(weapon)
-	animation_player.play("take_item")
+	if body.id == 0:
+		body.equip_item(weapon)
+		animation_player.play("take_item")

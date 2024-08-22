@@ -12,15 +12,18 @@ extends CharacterBody2D
 @onready var flame_thrower_scene = load("res://scenes/flame_thrower.tscn")
 @onready var weapons_scenes = [shooter_scene, laser_scene, ball_scene, flame_thrower_scene]
 
+@onready var rocket = $Rocket
 @onready var fire = $BackFire
 
-var is_moving = false
-var id = 0
+var is_moving := false
+var id := 0
+var points := 0
 
 var current_weapon_instance = null
 
 func _ready():
-	equip_item(0)
+	rocket.frame = id
+	#equip_item(0)
 	pass
 
 func equip_item(local_item): # local_item use later
@@ -32,9 +35,6 @@ func equip_item(local_item): # local_item use later
 	current_weapon_instance.position.y -= 14
 	add_child(current_weapon_instance)
 
-func reset_weapon():
-	print("reset_weapon")
-	#current_weapon = null
 
 
 func _process(_delta):
