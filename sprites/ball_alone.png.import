@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjljjkcjcmoie"
-path="res://.godot/imported/laser_action.png-2956bcc11618c4cf313793d36ad36dd8.ctex"
+uid="uid://cpconbgcr4jgr"
+path="res://.godot/imported/ball_alone.png-fa2d6af3ca02dc38644c071c17d262dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pixelart/laser_action.png"
-dest_files=["res://.godot/imported/laser_action.png-2956bcc11618c4cf313793d36ad36dd8.ctex"]
+source_file="res://sprites/ball_alone.png"
+dest_files=["res://.godot/imported/ball_alone.png-fa2d6af3ca02dc38644c071c17d262dd.ctex"]
 
 [params]
 

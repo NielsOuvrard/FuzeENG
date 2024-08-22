@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbo2a1mhg8n07"
-path="res://.godot/imported/flame_thrower_on.png-ba3e7e03bd96a0e06982c121a5ec6d56.ctex"
+uid="uid://bct1ywfmoygk3"
+path="res://.godot/imported/torch.png-bcde5397c882f47cb780fc1710d81184.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pixelart/flame_thrower_on.png"
-dest_files=["res://.godot/imported/flame_thrower_on.png-ba3e7e03bd96a0e06982c121a5ec6d56.ctex"]
+source_file="res://sprites/torch.png"
+dest_files=["res://.godot/imported/torch.png-bcde5397c882f47cb780fc1710d81184.ctex"]
 
 [params]
 

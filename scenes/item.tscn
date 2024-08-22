@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://b4thnnurvfd48"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_6gnb6"]
-[ext_resource type="Texture2D" uid="uid://co4sd6e6iykmv" path="res://sprites/pixelart/item.png" id="2_q3bwx"]
-[ext_resource type="Texture2D" uid="uid://d0nl7y8uwje7h" path="res://sprites/pixelart/item_ball.png" id="2_ww38v"]
-[ext_resource type="Texture2D" uid="uid://giwjmxnepd6a" path="res://sprites/pixelart/item_torch.png" id="3_s2p1v"]
-[ext_resource type="Texture2D" uid="uid://cgfs8tu0axok5" path="res://sprites/pixelart/item_purple.png" id="4_chg04"]
-[ext_resource type="Texture2D" uid="uid://cthun5s1vq8v3" path="res://sprites/pixelart/item_laser.png" id="5_dtiv1"]
+[ext_resource type="Texture2D" uid="uid://co4sd6e6iykmv" path="res://sprites/item.png" id="2_q3bwx"]
+[ext_resource type="Texture2D" uid="uid://d0nl7y8uwje7h" path="res://sprites/item_ball.png" id="2_ww38v"]
+[ext_resource type="Texture2D" uid="uid://giwjmxnepd6a" path="res://sprites/item_torch.png" id="3_s2p1v"]
+[ext_resource type="Texture2D" uid="uid://cgfs8tu0axok5" path="res://sprites/item_purple.png" id="4_chg04"]
+[ext_resource type="Texture2D" uid="uid://cthun5s1vq8v3" path="res://sprites/item_laser.png" id="5_dtiv1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rta3"]
 radius = 9.0

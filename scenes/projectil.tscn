@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvvcv7up6s26q"]
 
 [ext_resource type="Script" path="res://scripts/projectil.gd" id="1_ogexp"]
-[ext_resource type="Texture2D" uid="uid://b43rsn4nhpju3" path="res://sprites/pixelart/shot.png" id="2_iwnbv"]
+[ext_resource type="Texture2D" uid="uid://b43rsn4nhpju3" path="res://sprites/shot.png" id="2_iwnbv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsp7e"]
 radius = 4.12311

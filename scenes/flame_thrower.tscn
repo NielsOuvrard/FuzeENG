@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://swy3aobcge07"]
 
 [ext_resource type="Script" path="res://scripts/flame_thrower.gd" id="1_cjyo1"]
-[ext_resource type="Texture2D" uid="uid://bct1ywfmoygk3" path="res://sprites/pixelart/torch.png" id="2_h4b2a"]
-[ext_resource type="Texture2D" uid="uid://dbo2a1mhg8n07" path="res://sprites/pixelart/flame_thrower_on.png" id="3_lf83e"]
+[ext_resource type="Texture2D" uid="uid://bct1ywfmoygk3" path="res://sprites/torch.png" id="2_h4b2a"]
+[ext_resource type="Texture2D" uid="uid://dbo2a1mhg8n07" path="res://sprites/flame_thrower_on.png" id="3_lf83e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2n2i"]
 atlas = ExtResource("2_h4b2a")

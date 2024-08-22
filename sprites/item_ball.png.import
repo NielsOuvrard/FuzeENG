@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bct1ywfmoygk3"
-path="res://.godot/imported/torch.png-52ec8c9ce7f07aa827fe2ac431e76efc.ctex"
+uid="uid://d0nl7y8uwje7h"
+path="res://.godot/imported/item_ball.png-a8df2559bb8911a7d8ac1d55f0f27c7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pixelart/torch.png"
-dest_files=["res://.godot/imported/torch.png-52ec8c9ce7f07aa827fe2ac431e76efc.ctex"]
+source_file="res://sprites/item_ball.png"
+dest_files=["res://.godot/imported/item_ball.png-a8df2559bb8911a7d8ac1d55f0f27c7d.ctex"]
 
 [params]
 

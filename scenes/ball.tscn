@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://qxfgcqju0n6k"]
 
-[ext_resource type="Texture2D" uid="uid://ondomnnecni0" path="res://sprites/pixelart/ball.png" id="1_5sx47"]
+[ext_resource type="Texture2D" uid="uid://ondomnnecni0" path="res://sprites/ball.png" id="1_5sx47"]
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_pbjek"]
-[ext_resource type="Texture2D" uid="uid://xfhxfa44p6nq" path="res://sprites/pixelart/grip_ball_void.png" id="3_v2o3y"]
+[ext_resource type="Texture2D" uid="uid://xfhxfa44p6nq" path="res://sprites/grip_ball_void.png" id="3_v2o3y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2sny"]
 atlas = ExtResource("1_5sx47")
