@@ -20,8 +20,8 @@ var id = 0
 var current_weapon_instance = null
 
 func _ready():
-	equip_item(0)
-	#pass
+	#equip_item(1)
+	pass
 
 func equip_item(local_item): # local_item use later
 	# TODO remove the modulo when all weapons add

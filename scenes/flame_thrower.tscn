@@ -90,6 +90,7 @@ disabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_hig8s")
+disabled = true
 
 [connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

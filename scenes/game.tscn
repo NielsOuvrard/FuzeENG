@@ -12,20 +12,24 @@ zoom = Vector2(3, 3)
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_xbpyy")]
 position = Vector2(-130, -24)
 
-[node name="enemy" parent="." instance=ExtResource("2_1bjsr")]
+[node name="Enemies" type="Node" parent="."]
+
+[node name="enemy" parent="Enemies" instance=ExtResource("2_1bjsr")]
 position = Vector2(70, -82)
 
-[node name="enemy2" parent="." instance=ExtResource("2_1bjsr")]
+[node name="enemy2" parent="Enemies" instance=ExtResource("2_1bjsr")]
 position = Vector2(124, -15)
 
-[node name="enemy3" parent="." instance=ExtResource("2_1bjsr")]
+[node name="enemy3" parent="Enemies" instance=ExtResource("2_1bjsr")]
 position = Vector2(66, 67)
 
-[node name="Item2" parent="." instance=ExtResource("3_n7120")]
+[node name="Items" type="Node" parent="."]
+
+[node name="Item2" parent="Items" instance=ExtResource("3_n7120")]
 position = Vector2(-38, -72)
 
-[node name="Item" parent="." instance=ExtResource("3_n7120")]
+[node name="Item" parent="Items" instance=ExtResource("3_n7120")]
 position = Vector2(-70, 72)
 
-[node name="Item3" parent="." instance=ExtResource("3_n7120")]
+[node name="Item3" parent="Items" instance=ExtResource("3_n7120")]
 position = Vector2(58, -18)
