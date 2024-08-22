@@ -20,7 +20,7 @@ func _on_cool_down_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	if body.id != player.id:
+	if body.id < 0: # TODO change here to != and unlikn the rocket to game
 		body.destroy()
 		player.points += 1
 		player.camera_2d.apply_shake()

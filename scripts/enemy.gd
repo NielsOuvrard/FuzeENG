@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_player = $AnimationPlayer
 
-var id = 1
+var id = -1
 
 
 func destroy():

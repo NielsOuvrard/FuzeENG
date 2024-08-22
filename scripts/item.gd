@@ -20,6 +20,6 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body):
-	if body.id == 0:
+	if body.id >= 0:
 		body.equip_item(weapon)
 		animation_player.play("take_item")
