@@ -24,6 +24,8 @@ func _ready():
 	pass
 
 func equip_item(local_item): # local_item use later
+	if is_instance_valid(current_weapon_instance):
+		current_weapon_instance.queue_free()
 	# TODO remove the modulo when all weapons add
 	var new_weapon_scene = weapons_scenes[local_item % len(weapons_scenes)]
 	current_weapon_instance = new_weapon_scene.instantiate()
@@ -32,7 +34,6 @@ func equip_item(local_item): # local_item use later
 
 func reset_weapon():
 	print("reset_weapon")
-	#grips[current_weapon.kind].visible = false
 	#current_weapon = null
 
 
