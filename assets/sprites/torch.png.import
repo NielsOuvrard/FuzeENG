@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjljjkcjcmoie"
-path="res://.godot/imported/laser_action.png-72915944e4ee47fd9ed992fdb63041fd.ctex"
+uid="uid://bct1ywfmoygk3"
+path="res://.godot/imported/torch.png-14238db36a949aa7712af2447c12b1ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/laser_action.png"
-dest_files=["res://.godot/imported/laser_action.png-72915944e4ee47fd9ed992fdb63041fd.ctex"]
+source_file="res://assets/sprites/torch.png"
+dest_files=["res://.godot/imported/torch.png-14238db36a949aa7712af2447c12b1ca.ctex"]
 
 [params]
 

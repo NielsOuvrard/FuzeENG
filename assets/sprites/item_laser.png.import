@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbo2a1mhg8n07"
-path="res://.godot/imported/flame_thrower_on.png-18c52143fedec2843f8341201727ab84.ctex"
+uid="uid://cthun5s1vq8v3"
+path="res://.godot/imported/item_laser.png-e7ce143ff7233f5b52363e4e2ad7c1fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/flame_thrower_on.png"
-dest_files=["res://.godot/imported/flame_thrower_on.png-18c52143fedec2843f8341201727ab84.ctex"]
+source_file="res://assets/sprites/item_laser.png"
+dest_files=["res://.godot/imported/item_laser.png-e7ce143ff7233f5b52363e4e2ad7c1fe.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xfhxfa44p6nq"
-path="res://.godot/imported/grip_ball_void.png-43023fcca1badcc95948f9a871042d5d.ctex"
+path="res://.godot/imported/grip_ball_void.png-e5c3953d64e57be3913335a952c10d94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/grip_ball_void.png"
-dest_files=["res://.godot/imported/grip_ball_void.png-43023fcca1badcc95948f9a871042d5d.ctex"]
+source_file="res://assets/sprites/grip_ball_void.png"
+dest_files=["res://.godot/imported/grip_ball_void.png-e5c3953d64e57be3913335a952c10d94.ctex"]
 
 [params]
 

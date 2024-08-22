@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d27qp4amobtql"
-path="res://.godot/imported/purple.png-844a0d700820f7245b6d600a65da611a.ctex"
+uid="uid://dbo2a1mhg8n07"
+path="res://.godot/imported/flame_thrower_on.png-f4d8919c093fb41f71ef306f15173ec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/purple.png"
-dest_files=["res://.godot/imported/purple.png-844a0d700820f7245b6d600a65da611a.ctex"]
+source_file="res://assets/sprites/flame_thrower_on.png"
+dest_files=["res://.godot/imported/flame_thrower_on.png-f4d8919c093fb41f71ef306f15173ec2.ctex"]
 
 [params]
 

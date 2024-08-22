@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://joj54y6fgrr1"
-path="res://.godot/imported/rocket.png-67751c91bb4dedd0422d7e05f2e898ba.ctex"
+uid="uid://o10crkxx1pbk"
+path="res://.godot/imported/laser.png-40395e5276cc5ef049fe41b01c057e1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/rocket.png"
-dest_files=["res://.godot/imported/rocket.png-67751c91bb4dedd0422d7e05f2e898ba.ctex"]
+source_file="res://assets/sprites/laser.png"
+dest_files=["res://.godot/imported/laser.png-40395e5276cc5ef049fe41b01c057e1b.ctex"]
 
 [params]
 
