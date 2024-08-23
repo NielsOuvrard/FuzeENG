@@ -7,7 +7,6 @@ extends Node2D
 @onready var items_cooldown = $ItemsCooldown
 @onready var enemies_cooldown = $EnemiesCooldown
 @onready var progress_bar = $ProgressBar
-@onready var player = $Player
 @onready var time_label = $TimeLabel
 @onready var points_label = $PointsLabel
 @onready var points_label_2 = $PointsLabel2
@@ -30,7 +29,11 @@ var id_next_player := 0:
 		return id_next_player - 1
 
 var nmb_players := 1
-var player_2 = null
+
+# not optimal
+var players := []
+var player_zqsd := false
+var player_arroz := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,20 +53,26 @@ func wait_for_next_enemy():
 	enemies_cooldown.wait_time = randi() % TIME_MAX_BETWEEN_ENEMIES
 	enemies_cooldown.start()
 
-func is_an_element_here(pos):
+func absolute_distance(pos_1: Vector2, pos_2: Vector2):
+	if abs(sqrt((pos_1.x - pos_2.x) ** 2 + (pos_1.y - pos_2.y) ** 2)) < DISTANCE_MINIMUM_SPAWN:
+		return true
+	return false
+
+func is_an_element_here(pos: Vector2):
 	var too_close := false
 	for local_item in items_at_screen:
 		if is_instance_valid(local_item):
-			if abs(sqrt((pos.x - local_item.position.x) ** 2 + (pos.y - local_item.position.y) ** 2)) < DISTANCE_MINIMUM_SPAWN:
+			if absolute_distance(pos, local_item.position):
 				too_close = true
 			
 	for local_enemy in enemies_at_screen:
 		if is_instance_valid(local_enemy):
-			if abs(sqrt((pos.x - local_enemy.position.x) ** 2 + (pos.y - local_enemy.position.y) ** 2)) < DISTANCE_MINIMUM_SPAWN:
+			if absolute_distance(pos, local_enemy.position):
 				too_close = true
 	
-	if abs(sqrt((pos.x - player.position.x) ** 2 + (pos.y - player.position.y) ** 2)) < DISTANCE_MINIMUM_SPAWN:
-		too_close = true
+	for player in players:
+		if absolute_distance(pos, player.position):
+			too_close = true
 	
 	return too_close
 
@@ -116,20 +125,45 @@ func _process(delta):
 		progress_bar.value = 60 - time_elapsed  # Update the progress bar value
 		time_label.text = str(int(progress_bar.value))
 		
-		points_label.text = "Points: " + str(player.points)
-		if is_instance_valid(player_2):
-			points_label_2.text = "Points: " + str(player_2.points)
+		
+		if player_arroz:
+			points_label.text = "Points: " + str(players[0].points)
+		if player_zqsd:
+			points_label_2.text = "Points: " + str(players[1].points)
 	else:
 		print("Time's up!")
-		
-	if nmb_players == 1:
-		if Input.get_action_strength("up_2") or Input.get_action_strength("down_2") or Input.get_action_strength("right_2") or Input.get_action_strength("left_2"):
-			player_2 = player_scene.instantiate()
-			player_2.input_move_up = "up_2"
-			player_2.input_move_down = "down_2"
-			player_2.input_move_right = "right_2"
-			player_2.input_move_left = "left_2"
-			player_2.input_shot = "shot_2"
-d
-			add_child(player_2)
-			nmb_players += 1
+		# TODO do smth here
+	
+	if not player_arroz:
+		if Input.get_action_strength("move_up") or \
+		   Input.get_action_strength("move_down") or \
+		   Input.get_action_strength("move_right") or \
+		   Input.get_action_strength("move_left"):
+			var new_player = player_scene.instantiate()
+			new_player.input_move_up = "move_up"
+			new_player.input_move_down = "move_down"
+			new_player.input_move_right = "move_right"
+			new_player.input_move_left = "move_left"
+			new_player.input_shot = "shot"
+
+			add_child(new_player)
+			players.append(new_player)
+			player_arroz = true
+
+	if not player_zqsd:
+		if Input.get_action_strength("up_2") or \
+		   Input.get_action_strength("down_2") or \
+		   Input.get_action_strength("right_2") or \
+		   Input.get_action_strength("left_2"):
+			var new_player = player_scene.instantiate()
+			new_player.input_move_up = "up_2"
+			new_player.input_move_down = "down_2"
+			new_player.input_move_right = "right_2"
+			new_player.input_move_left = "left_2"
+			new_player.input_shot = "shot_2"
+
+			add_child(new_player)
+			players.append(new_player)
+			player_zqsd = true
+			
+	# TODO add here controler player

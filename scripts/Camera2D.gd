@@ -7,7 +7,6 @@ var rng = RandomNumberGenerator.new()
 var shake_strength: float = 0.0
 
 func apply_shake():
-	print("shake")
 	shake_strength = randomStrength
 
 func _process(delta):

@@ -15,6 +15,7 @@ extends CharacterBody2D
 @onready var rocket = $Rocket
 @onready var fire = $BackFire
 @onready var main = $".."
+@onready var cool_down = $CoolDown
 
 var id : int
 var input_move_up = "move_up"
@@ -49,6 +50,13 @@ func _process(_delta):
 	var is_shooting = Input.get_action_strength(input_shot)
 	if is_shooting and is_instance_valid(current_weapon_instance):
 		current_weapon_instance.shot()
+
+
+
+func destroy():
+	cool_down.start()
+	
+	
 
 
 

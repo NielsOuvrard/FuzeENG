@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://by127lk2whq6t"]
+[gd_scene load_steps=10 format=3 uid="uid://by127lk2whq6t"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_kym8u"]
 [ext_resource type="Texture2D" uid="uid://rmunk87jv2v8" path="res://assets/sprites/background.png" id="1_tm8o3"]
-[ext_resource type="PackedScene" uid="uid://cc3mjrgpkxhv5" path="res://scenes/player.tscn" id="1_xbpyy"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_2pfc6"]
 [ext_resource type="FontFile" uid="uid://dsvosxxjomnr5" path="res://assets/fonts/PixelOperator8.ttf" id="5_qh4jr"]
 [ext_resource type="AudioStream" uid="uid://cy2r06vh0w00a" path="res://assets/sounds/gamemusic.mp3" id="5_wj827"]
@@ -41,8 +40,6 @@ anti_aliasing = false
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kym8u")
-INIT_NBR_ITEMS = null
-INIT_NBR_ENEMIES = null
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gxjra")
@@ -56,9 +53,6 @@ zoom = Vector2(5, 5)
 script = ExtResource("3_2pfc6")
 randomStrength = 5.0
 shakeFade = 50.0
-
-[node name="Player" parent="." instance=ExtResource("1_xbpyy")]
-position = Vector2(-130, -24)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -118.0
@@ -77,7 +71,6 @@ offset_top = 86.0
 offset_right = 190.0
 offset_bottom = 109.0
 theme_override_fonts/font = ExtResource("5_qh4jr")
-text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -87,7 +80,6 @@ offset_top = 85.0
 offset_right = -82.0
 offset_bottom = 108.0
 theme_override_fonts/font = ExtResource("5_qh4jr")
-text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 

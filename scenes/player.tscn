@@ -97,3 +97,5 @@ frame_progress = 0.482674
 texture = ExtResource("3_n2jlk")
 offset = Vector2(2.08165e-12, 2.08165e-12)
 vframes = 4
+
+[node name="CoolDown" type="Timer" parent="."]
