@@ -39,11 +39,11 @@ var player_arroz := false
 func _ready():
 	for _i in range(INIT_NBR_ITEMS):
 		add_item()
-	for _i in range(INIT_NBR_ENEMIES):
-		add_enemy()
+	#for _i in range(INIT_NBR_ENEMIES):
+		#add_enemy()
 
 	items_cooldown.start()
-	enemies_cooldown.start()
+	#enemies_cooldown.start()
 	
 func wait_for_next_item():
 	items_cooldown.wait_time = randi() % TIME_MAX_BETWEEN_ITEMS

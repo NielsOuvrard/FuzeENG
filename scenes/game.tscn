@@ -15,7 +15,7 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_gxjra"]
+[sub_resource type="TileSet" id="TileSet_nvebc"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_fwdox")
 
@@ -42,7 +42,7 @@ anti_aliasing = false
 script = ExtResource("1_kym8u")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_gxjra")
+tile_set = SubResource("TileSet_nvebc")
 rendering_quadrant_size = 32
 format = 2
 layer_0/name = "BG"

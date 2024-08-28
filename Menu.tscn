@@ -1,61 +1,103 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmy7alag1g25y"]
+[gd_scene load_steps=7 format=3 uid="uid://cmy7alag1g25y"]
 
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_56ac2"]
 [ext_resource type="FontFile" uid="uid://dsvosxxjomnr5" path="res://assets/fonts/PixelOperator8.ttf" id="1_a66bi"]
 [ext_resource type="Texture2D" uid="uid://bk6vso4vsh481" path="res://assets/sprites/rockets.png" id="2_n2wld"]
+[ext_resource type="Texture2D" uid="uid://rmunk87jv2v8" path="res://assets/sprites/background.png" id="2_y6ssd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xecnx"]
+resource_name = "background"
+texture = ExtResource("2_y6ssd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m67lu"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_xecnx")
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 6.0
-offset_right = 4.0
-offset_bottom = 6.0
+offset_right = -1726.0
+offset_bottom = -975.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_56ac2")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_m67lu")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-131068, 65537, 1, 196603, 65537, 1342177281, -3, 131073, 1)
+layer_1/name = "BG"
+layer_1/tile_data = PackedInt32Array(-196615, 1, 1, -131079, 1, 1, -65543, 1, 1, -7, 1, 0, 65529, 1, 1, 131065, 1, 1, 196601, 1, 1, 262137, 1, 1, -196614, 1, 1, -131078, 1, 1, -65542, 1, 1, -6, 1, 1, 65530, 1, 1, 131066, 1, 1, 196602, 1, 1, 262138, 1, 1, -196613, 1, 1, -131077, 1, 1, -65541, 65537, 0, -5, 1, 1, 65531, 1, 1, 131067, 1, 1, 196603, 65537, 0, 262139, 1, 1, -196612, 1, 1, -131076, 1, 1, -65540, 1, 1, -4, 1, 1, 65532, 1, 1, 131068, 1, 1, 196604, 131073, 0, 262140, 1, 1, -196611, 1, 1, -131075, 1, 1, -65539, 1, 1, -3, 1, 0, 65533, 1, 1, 131069, 1, 1, 196605, 1, 1, 262141, 1, 1, -196610, 1, 1, -131074, 1, 1, -65538, 1, 1, -2, 1, 1, 65534, 1, 1, 131070, 1, 1, 196606, 1, 1, 262142, 1, 1, -196609, 1, 1, -131073, 1, 1, -65537, 1, 1, -1, 1, 1, 65535, 1, 1, 131071, 1, 1, 196607, 1, 1, 262143, 1, 1, -262144, 1, 0, -196608, 1, 1, -131072, 1, 1, -65536, 1, 1, 0, 1, 1, 65536, 1, 1, 131072, 1, 1, 196608, 1, 1, -262143, 1, 1, -196607, 1, 1, -131071, 1, 1, -65535, 1, 1, 1, 1, 1, 65537, 1, 1, 131073, 1, 0, 196609, 1, 1, -262142, 1, 1, -196606, 1, 1, -131070, 1, 1, -65534, 1, 1, 2, 1, 1, 65538, 1, 1, 131074, 1, 1, 196610, 1, 1, -262141, 1, 1, -196605, 1, 1, -131069, 131073, 0, -65533, 1, 1, 3, 1, 1, 65539, 1, 1, 131075, 1, 1, 196611, 1, 1, -262140, 1, 1, -196604, 1, 1, -131068, 1, 1, -65532, 1, 1, 4, 1, 1, 65540, 65537, 0, 131076, 131073, 0, 196612, 1, 1, -262139, 1, 1, -196603, 1, 1, -131067, 1, 1, -65531, 65537, 0, 5, 1, 1, 65541, 1, 1, 131077, 1, 1, 196613, 1, 1, -262138, 1, 1, -196602, 1, 1, -131066, 1, 1, -65530, 1, 1, 6, 1, 1, 65542, 1, 1, 131078, 1, 1, 196614, 1, 1)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 26.0
-offset_top = -2.0
-offset_right = 384.0
-offset_bottom = 74.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.005
+anchor_top = -0.012
+anchor_right = -0.005
+anchor_bottom = -0.012
+offset_left = -169.4
+offset_top = -84.04
+offset_right = 188.6
+offset_bottom = -8.04
 theme_override_fonts/font = ExtResource("1_a66bi")
 text = "FuzeENG"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(5, 5)
 zoom = Vector2(5, 5)
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 45.0
-offset_top = -25.0
-offset_right = 112.0
-offset_bottom = 35.0
+offset_left = -160.0
+offset_top = -96.0
+offset_right = 158.0
+offset_bottom = -30.0
 
 [node name="Green" type="Sprite2D" parent="Control"]
-position = Vector2(94, 125)
+position = Vector2(100, 125)
 texture = ExtResource("2_n2wld")
 vframes = 4
 
 [node name="White" type="Sprite2D" parent="Control"]
-position = Vector2(223, 182)
+position = Vector2(225, 175)
 texture = ExtResource("2_n2wld")
 vframes = 4
 frame = 3
 
 [node name="Yellow" type="Sprite2D" parent="Control"]
-position = Vector2(94, 181)
+position = Vector2(100, 175)
 texture = ExtResource("2_n2wld")
 vframes = 4
 frame = 2
 
 [node name="Red" type="Sprite2D" parent="Control"]
-position = Vector2(225, 127)
+position = Vector2(225, 125)
 texture = ExtResource("2_n2wld")
 vframes = 4
 frame = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 30.0
+offset_right = 33.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_a66bi")
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

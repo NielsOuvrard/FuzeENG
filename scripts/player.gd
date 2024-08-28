@@ -16,6 +16,8 @@ extends CharacterBody2D
 @onready var fire = $BackFire
 @onready var main = $".."
 @onready var cool_down = $CoolDown
+@onready var back_fire = $BackFire
+@onready var collision = $Collision
 
 var id : int
 var input_move_up = "move_up"
@@ -55,8 +57,17 @@ func _process(_delta):
 
 func destroy():
 	cool_down.start()
+	back_fire.visible = false
+	rocket.visible = false
+	collision.disabled = true
 	
 	
+func _on_cool_down_timeout():
+	back_fire.visible = true
+	rocket.visible = true
+	collision.disabled = false
+	position = Vector2(0, 0)
+
 
 
 
@@ -93,3 +104,4 @@ func _physics_process(delta):
 	velocity.y = move_toward(velocity.y, direction.y, ACCEL)
 
 	move_and_slide()
+
