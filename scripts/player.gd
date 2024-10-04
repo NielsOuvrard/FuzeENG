@@ -5,10 +5,10 @@ extends CharacterBody2D
 @export var ACCEL = 1.5
 
 # ? onreeady necessary
-@onready var shooter_scene = load("res://scenes/shooter.tscn")
-@onready var laser_scene = load("res://scenes/laser.tscn")
-@onready var ball_scene = load("res://scenes/ball.tscn")
-@onready var flame_thrower_scene = load("res://scenes/flame_thrower.tscn")
+@onready var shooter_scene = load("res://scenes/weapon_purple.tscn")
+@onready var laser_scene = load("res://scenes/weapon_green.tscn")
+@onready var ball_scene = load("res://scenes/weapon_grey.tscn")
+@onready var flame_thrower_scene = load("res://scenes/weapon_yellow.tscn")
 @onready var weapons_scenes = [shooter_scene, laser_scene, ball_scene, flame_thrower_scene]
 @onready var camera_2d = $"../Camera2D"
 
@@ -31,9 +31,9 @@ var points := 0
 var current_weapon_instance = null
 
 func _ready():
-	id = main.id_next_player
+	id = Global.id_next_player
+	Global.id_next_player += 1
 	rocket.frame = id
-	#equip_item(0)
 	pass
 
 func equip_item(local_item): # local_item use later
@@ -46,7 +46,11 @@ func equip_item(local_item): # local_item use later
 	current_weapon_instance.player = self
 	add_child(current_weapon_instance)
 
-
+func increment_point():
+	if id == 0:
+		Global.increment_point_p1.emit()
+	else:
+		Global.increment_point_p2.emit()
 
 func _process(_delta):
 	var is_shooting = Input.get_action_strength(input_shot)
@@ -60,6 +64,9 @@ func destroy():
 	back_fire.visible = false
 	rocket.visible = false
 	collision.disabled = true
+	if is_instance_valid(current_weapon_instance):
+		current_weapon_instance.queue_free()
+	current_weapon_instance = null
 	
 	
 func _on_cool_down_timeout():
@@ -104,4 +111,3 @@ func _physics_process(delta):
 	velocity.y = move_toward(velocity.y, direction.y, ACCEL)
 
 	move_and_slide()
-

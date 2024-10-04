@@ -1,23 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://by127lk2whq6t"]
+[gd_scene load_steps=9 format=4 uid="uid://by127lk2whq6t"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_kym8u"]
-[ext_resource type="Texture2D" uid="uid://rmunk87jv2v8" path="res://assets/sprites/background.png" id="1_tm8o3"]
+[ext_resource type="PackedScene" uid="uid://chi7p6b1iexll" path="res://scenes/hud.tscn" id="2_f7gdc"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_2pfc6"]
 [ext_resource type="FontFile" uid="uid://dsvosxxjomnr5" path="res://assets/fonts/PixelOperator8.ttf" id="5_qh4jr"]
 [ext_resource type="AudioStream" uid="uid://cy2r06vh0w00a" path="res://assets/sounds/gamemusic.mp3" id="5_wj827"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwdox"]
-texture = ExtResource("1_tm8o3")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_nvebc"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_fwdox")
+[ext_resource type="TileSet" uid="uid://cnxws7jx8uoo0" path="res://scenes/tileset.tres" id="5_x4r3m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gx38q"]
 bg_color = Color(0.326963, 0.00109685, 0.754094, 1)
@@ -41,12 +29,11 @@ anti_aliasing = false
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kym8u")
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_nvebc")
-rendering_quadrant_size = 32
-format = 2
-layer_0/name = "BG"
-layer_0/tile_data = PackedInt32Array(-196615, 0, 1, -131079, 0, 1, -65543, 0, 1, -7, 0, 1, 65529, 0, 1, 131065, 0, 1, 196601, 0, 1, 262137, 0, 1, -196614, 0, 1, -131078, 0, 1, -65542, 131072, 0, -6, 0, 1, 65530, 0, 1, 131066, 0, 1, 196602, 0, 1, 262138, 0, 1, -196613, 0, 1, -131077, 0, 1, -65541, 0, 1, -5, 0, 1, 65531, 0, 1, 131067, 0, 1, 196603, 0, 0, 262139, 0, 1, -196612, 0, 1, -131076, 0, 1, -65540, 0, 1, -4, 0, 1, 65532, 0, 1, 131068, 0, 1, 196604, 0, 1, 262140, 0, 1, -196611, 0, 1, -131075, 0, 1, -65539, 0, 0, -3, 0, 1, 65533, 65536, 0, 131069, 0, 1, 196605, 0, 1, 262141, 0, 1, -196610, 0, 1, -131074, 0, 1, -65538, 0, 1, -2, 0, 1, 65534, 0, 1, 131070, 0, 1, 196606, 0, 1, 262142, 0, 1, -196609, 0, 1, -131073, 0, 1, -65537, 0, 1, -1, 0, 1, 65535, 0, 1, 131071, 0, 1, 196607, 0, 1, 262143, 0, 1, -262144, 0, 1, -196608, 65536, 0, -131072, 0, 1, -65536, 0, 1, 0, 0, 1, 65536, 131072, 0, 131072, 65536, 0, 196608, 0, 1, -262143, 0, 1, -196607, 0, 1, -131071, 0, 1, -65535, 0, 1, 1, 0, 1, 65537, 0, 1, 131073, 0, 1, 196609, 0, 1, -262142, 0, 1, -196606, 0, 1, -131070, 0, 1, -65534, 0, 1, 2, 0, 1, 65538, 0, 1, 131074, 0, 1, 196610, 0, 1, -262141, 0, 1, -196605, 0, 1, -131069, 0, 1, -65533, 0, 1, 3, 0, 1, 65539, 0, 0, 131075, 0, 1, 196611, 0, 1, -262140, 0, 1, -196604, 0, 1, -131068, 0, 1, -65532, 0, 1, 4, 0, 1, 65540, 0, 1, 131076, 0, 1, 196612, 0, 1, -262139, 0, 1, -196603, 0, 1, -131067, 131072, 0, -65531, 0, 1, 5, 0, 1, 65541, 0, 1, 131077, 0, 1, 196613, 0, 1, -262138, 0, 1, -196602, 0, 1, -131066, 0, 1, -65530, 0, 1, 6, 0, 1, 65542, 0, 1, 131078, 0, 1, 196614, 0, 1)
+[node name="HUD" parent="." instance=ExtResource("2_f7gdc")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD5//z/AAAAAAEAAAD5//3/AAAAAAEAAAD5//7/AAAAAAEAAAD5////AAAAAAEAAAD5/wAAAAAAAAEAAAD5/wEAAAAAAAEAAAD5/wIAAAAAAAEAAAD5/wMAAAAAAAEAAAD6//z/AAAAAAEAAAD6//3/AAAAAAEAAAD6//7/AAAAAAEAAAD6////AAAAAAEAAAD6/wAAAAAAAAEAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAEAAAD6/wMAAAAAAAEAAAD7//z/AAAAAAEAAAD7//3/AAAAAAEAAAD7//7/AAAAAAEAAAD7////AAAAAAEAAAD7/wAAAAAAAAEAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAEAAAD7/wMAAAAAAAEAAAD8//z/AAAAAAEAAAD8//3/AAAAAAEAAAD8//7/AAAAAAAAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAACAAAAAAD8/wMAAAAAAAEAAAD9//z/AAAAAAEAAAD9//3/AAAAAAEAAAD9//7/AAAAAAEAAAD9////AAAAAAEAAAD9/wAAAAAAAAEAAAD9/wEAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD+//z/AAAAAAEAAAD+//3/AAABAAAAAAD+//7/AAAAAAEAAAD+////AAAAAAEAAAD+/wAAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wMAAAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAAAAPz/AAAAAAEAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAACAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAPz/AAAAAAEAAAABAP3/AAAAAAEAAAABAP7/AAAAAAEAAAABAP//AAAAAAEAAAABAAAAAAAAAAEAAAABAAEAAAAAAAEAAAABAAIAAAAAAAEAAAABAAMAAAABAAAAAAACAPz/AAAAAAEAAAACAP3/AAAAAAEAAAACAP7/AAAAAAEAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAACAAIAAAAAAAEAAAACAAMAAAAAAAEAAAADAPz/AAAAAAEAAAADAP3/AAAAAAEAAAADAP7/AAAAAAEAAAADAP//AAAAAAEAAAADAAAAAAAAAAEAAAADAAEAAAAAAAEAAAADAAIAAAAAAAEAAAADAAMAAAAAAAEAAAAEAPz/AAAAAAEAAAAEAP3/AAAAAAEAAAAEAP7/AAAAAAAAAAAEAP//AAACAAAAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAPz/AAAAAAEAAAAFAP3/AAAAAAEAAAAFAP7/AAAAAAEAAAAFAP//AAAAAAEAAAAFAAAAAAAAAAEAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAPz/AAAAAAEAAAAGAP3/AAAAAAEAAAAGAP7/AAAAAAEAAAAGAP//AAAAAAEAAAAGAAAAAAAAAAEAAAAGAAEAAAAAAAEAAAAGAAIAAAAAAAEAAAAGAAMAAAAAAAEAAAA=")
+tile_set = ExtResource("5_x4r3m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -55,6 +42,7 @@ randomStrength = 5.0
 shakeFade = 50.0
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -118.0
 offset_top = -104.0
 offset_right = 118.0
@@ -65,25 +53,8 @@ max_value = 60.0
 value = 60.0
 show_percentage = false
 
-[node name="PointsLabel" type="Label" parent="."]
-offset_left = 80.0
-offset_top = 86.0
-offset_right = 190.0
-offset_bottom = 109.0
-theme_override_fonts/font = ExtResource("5_qh4jr")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PointsLabel2" type="Label" parent="."]
-offset_left = -192.0
-offset_top = 85.0
-offset_right = -82.0
-offset_bottom = 108.0
-theme_override_fonts/font = ExtResource("5_qh4jr")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TimeLabel" type="Label" parent="."]
+visible = false
 offset_left = -38.0
 offset_top = -104.0
 offset_right = 38.0

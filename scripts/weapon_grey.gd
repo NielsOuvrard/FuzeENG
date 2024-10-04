@@ -2,12 +2,13 @@ extends Node2D
 
 @onready var timer = $Timer
 @onready var main = $"../.."
-@onready var projectile = load("res://scenes/projectil_ball.tscn")
+@onready var projectile = load("res://scenes/projectil_grey.tscn")
 @onready var grip = $Grip
 @onready var shot_sound = $ShotSound
 
 const size_grip = Vector2(10, 30) # value approximated
 var shot_done := false
+
 var player
 
 func shot():
@@ -30,4 +31,3 @@ func shot():
 
 func _on_timer_timeout():
 	queue_free()
-

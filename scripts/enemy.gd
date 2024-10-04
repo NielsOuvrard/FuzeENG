@@ -7,4 +7,3 @@ var id = -1
 
 func destroy():
 	animation_player.play("destroy")
-

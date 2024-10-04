@@ -16,8 +16,6 @@ func _ready():
 	if weapon < 0:
 		weapon = randi() % len(weapons)
 	weapons[weapon].visible = true
-	
-
 
 func _on_area_2d_body_entered(body):
 	if body.id >= 0:

@@ -26,6 +26,6 @@ func _on_timer_timeout():
 func _on_area_2d_body_entered(body):
 	if body.id != sender.id:
 		body.destroy()
-		sender.points += 1
+		sender.increment_point()
 		sender.camera_2d.apply_shake()
 		queue_free()

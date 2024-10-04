@@ -2,14 +2,12 @@ extends Node2D
 
 @onready var item = load("res://scenes/item.tscn")
 @onready var enemy = load("res://scenes/enemy.tscn")
-@onready var player_scene = load("res://scenes/player.tscn")
+@onready var player_scene = load("res://scenes/rocket.tscn")
 
 @onready var items_cooldown = $ItemsCooldown
 @onready var enemies_cooldown = $EnemiesCooldown
 @onready var progress_bar = $ProgressBar
 @onready var time_label = $TimeLabel
-@onready var points_label = $PointsLabel
-@onready var points_label_2 = $PointsLabel2
 
 @export var INIT_NBR_ITEMS := 3
 @export var INIT_NBR_ENEMIES := 3
@@ -23,12 +21,6 @@ const SPAWN_ZONE = SIZE_WINDOW * 0.8
 var time_elapsed := 0.0
 var items_at_screen := []
 var enemies_at_screen := []
-var id_next_player := 0:
-	get:
-		id_next_player += 1
-		return id_next_player - 1
-
-var nmb_players := 1
 
 # not optimal
 var players := []
@@ -120,19 +112,11 @@ func _on_enemies_cooldown_timeout():
 
 
 func _process(delta):
-	if time_elapsed < 60.0:
-		time_elapsed += delta
-		progress_bar.value = 60 - time_elapsed  # Update the progress bar value
-		time_label.text = str(int(progress_bar.value))
-		
-		
-		if player_arroz:
-			points_label.text = "Points: " + str(players[0].points)
-		if player_zqsd:
-			points_label_2.text = "Points: " + str(players[1].points)
-	else:
-		print("Time's up!")
-		# TODO do smth here
+	if round(time_elapsed + delta) != round(time_elapsed):
+		Global.time_passed.emit(time_elapsed + delta)
+	time_elapsed += delta
+	progress_bar.value = 60 - time_elapsed  # Update the progress bar value
+	time_label.text = str(int(progress_bar.value))
 	
 	if not player_arroz:
 		if Input.get_action_strength("move_up") or \

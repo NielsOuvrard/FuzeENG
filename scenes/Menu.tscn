@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=4 uid="uid://cmy7alag1g25y"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_gflge"]
+[ext_resource type="TileSet" uid="uid://cnxws7jx8uoo0" path="res://scenes/tileset.tres" id="2_g6pm7"]
+[ext_resource type="FontFile" uid="uid://dsvosxxjomnr5" path="res://assets/fonts/PixelOperator8.ttf" id="3_dlbel"]
+[ext_resource type="Texture2D" uid="uid://bk6vso4vsh481" path="res://assets/sprites/rockets.png" id="4_fdm3g"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_gflge")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD5//z/AAAAAAEAAAD5//3/AAAAAAEAAAD5//7/AAAAAAEAAAD5////AAAAAAEAAAD5/wAAAAAAAAEAAAD5/wEAAAAAAAEAAAD5/wIAAAAAAAEAAAD5/wMAAAAAAAEAAAD6//z/AAAAAAEAAAD6//3/AAAAAAEAAAD6//7/AAAAAAEAAAD6////AAAAAAEAAAD6/wAAAAAAAAEAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAEAAAD6/wMAAAAAAAEAAAD7//z/AAAAAAEAAAD7//3/AAAAAAEAAAD7//7/AAAAAAEAAAD7////AAAAAAEAAAD7/wAAAAAAAAEAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAEAAAD7/wMAAAAAAAEAAAD8//z/AAAAAAEAAAD8//3/AAAAAAEAAAD8//7/AAAAAAAAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAACAAAAAAD8/wMAAAAAAAEAAAD9//z/AAAAAAEAAAD9//3/AAAAAAEAAAD9//7/AAAAAAEAAAD9////AAAAAAEAAAD9/wAAAAAAAAEAAAD9/wEAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD+//z/AAAAAAEAAAD+//3/AAABAAAAAAD+//7/AAAAAAEAAAD+////AAAAAAEAAAD+/wAAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wMAAAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAAAAPz/AAAAAAEAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAACAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAPz/AAAAAAEAAAABAP3/AAAAAAEAAAABAP7/AAAAAAEAAAABAP//AAAAAAEAAAABAAAAAAAAAAEAAAABAAEAAAAAAAEAAAABAAIAAAAAAAEAAAABAAMAAAABAAAAAAACAPz/AAAAAAEAAAACAP3/AAAAAAEAAAACAP7/AAAAAAEAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAACAAIAAAAAAAEAAAACAAMAAAAAAAEAAAADAPz/AAAAAAEAAAADAP3/AAAAAAEAAAADAP7/AAAAAAEAAAADAP//AAAAAAEAAAADAAAAAAAAAAEAAAADAAEAAAAAAAEAAAADAAIAAAAAAAEAAAADAAMAAAAAAAEAAAAEAPz/AAAAAAEAAAAEAP3/AAAAAAEAAAAEAP7/AAAAAAAAAAAEAP//AAACAAAAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAPz/AAAAAAEAAAAFAP3/AAAAAAEAAAAFAP7/AAAAAAEAAAAFAP//AAAAAAEAAAAFAAAAAAAAAAEAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAPz/AAAAAAEAAAAGAP3/AAAAAAEAAAAGAP7/AAAAAAEAAAAGAP//AAAAAAEAAAAGAAAAAAAAAAEAAAAGAAEAAAAAAAEAAAAGAAIAAAAAAAEAAAAGAAMAAAAAAAEAAAA=")
+tile_set = ExtResource("2_g6pm7")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.005
+anchor_top = -0.012
+anchor_right = -0.005
+anchor_bottom = -0.012
+offset_left = -169.4
+offset_top = -84.04
+offset_right = 188.6
+offset_bottom = -8.04
+theme_override_fonts/font = ExtResource("3_dlbel")
+text = "FuzeENG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="last_score" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = -0.005
+anchor_top = -0.012
+anchor_right = -0.005
+anchor_bottom = -0.012
+offset_left = -169.0
+offset_top = -35.0
+offset_right = 189.0
+offset_bottom = -3.0
+theme_override_fonts/font = ExtResource("3_dlbel")
+text = "Last score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(5, 5)
+zoom = Vector2(5, 5)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = -96.0
+offset_right = 158.0
+offset_bottom = -30.0
+
+[node name="Green" type="Sprite2D" parent="Control"]
+position = Vector2(100, 125)
+texture = ExtResource("4_fdm3g")
+vframes = 4
+
+[node name="White" type="Sprite2D" parent="Control"]
+position = Vector2(225, 175)
+texture = ExtResource("4_fdm3g")
+vframes = 4
+frame = 3
+
+[node name="Yellow" type="Sprite2D" parent="Control"]
+position = Vector2(100, 175)
+texture = ExtResource("4_fdm3g")
+vframes = 4
+frame = 2
+
+[node name="Red" type="Sprite2D" parent="Control"]
+position = Vector2(225, 125)
+texture = ExtResource("4_fdm3g")
+vframes = 4
+frame = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = -31.0
+offset_top = 30.0
+offset_right = 33.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("3_dlbel")
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -37,4 +37,4 @@ func _on_area_2d_body_entered(body):
 	if body.id != sender.id:
 		sender.camera_2d.apply_shake()
 		body.destroy()
-		sender.points += 1
+		sender.increment_point()

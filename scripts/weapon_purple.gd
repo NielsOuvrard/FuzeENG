@@ -3,7 +3,7 @@ extends Node2D
 @onready var timer = $Timer
 @onready var main = $"../.."
 
-@onready var projectile = load("res://scenes/projectil.tscn")
+@onready var projectile = load("res://scenes/projectil_purple.tscn")
 
 @onready var shot_sound = $ShotSound
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://seg7j5mvdbxo"]
 
-[ext_resource type="Script" path="res://scripts/shooter.gd" id="1_m7jtn"]
+[ext_resource type="Script" path="res://scripts/weapon_purple.gd" id="1_m7jtn"]
 [ext_resource type="Texture2D" uid="uid://d27qp4amobtql" path="res://assets/sprites/purple.png" id="2_8dyhx"]
 [ext_resource type="AudioStream" uid="uid://dwi6y1pcx1lpp" path="res://assets/sounds/laser_shot.mp3" id="3_uv4yg"]
 
