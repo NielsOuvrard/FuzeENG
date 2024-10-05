@@ -40,7 +40,7 @@ And the goal will be to kill the other player.
 
 ## Usage
 
-You can play the game by opening the project in Godot Engine.
+[Link of the game](https://lacunaire.itch.io/fuzeeng)
 
 <!--
 idea:
